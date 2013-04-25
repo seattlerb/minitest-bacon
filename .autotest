@@ -1,0 +1,24 @@
+# -*- ruby -*-
+
+require "autotest/restart"
+
+Autotest.add_hook :initialize do |at|
+  at.testlib = "minitest/autorun"
+  at.add_exception "tmp"
+
+  [ "Bacon",
+    "before/after",
+    "before/after::when",
+    ">, >=, <, <=, ===",
+    "before/after::when nested at a sibling level",
+    "before/after::when nested",
+    "describe arguments",
+    "#should shortcut for #it",
+  ].each do |klass|
+    at.extra_class_map[klass] = "test/minitest/test_bacon.rb"
+  end
+end
+
+# Autotest.add_hook :run_command do |at|
+#   system "rake build"
+# end
