@@ -85,8 +85,11 @@ describe "Bacon" do
       lambda { i *= 2 }.should.change { i }
     }.should fail
 
-    # HACK lambda { should.change { sleep 0.001; Time.now } }.should succeed
-    # HACK lambda { should.change { 42 } }.should fail
+    ##
+    # top-level should is an alias for "it", not a blank value monad.
+
+    # lambda { should.change { sleep 0.001; Time.now } }.should succeed
+    # lambda { should.change { 42 } }.should fail
   end
 
   it "should have should.raise with a block" do
@@ -185,10 +188,20 @@ describe "Bacon" do
   it "should have should.not.match" do
     lambda { "string".should.not.match(/sling/) }.should succeed
     lambda { "string".should.not.match(/string/) }.should fail
-    # lambda { "string".should.not.match("strin") }.should fail
+
+    ##
+    # doesn't coerce strings to regexps so that it can work with
+    # anything that implements =~
+
+    lambda { "string".should.not.match("strin") }.should fail
 
     lambda { "string".should.not =~ /sling/ }.should succeed
     lambda { "string".should.not =~ /string/ }.should fail
+
+    ##
+    # doesn't coerce strings to regexps so that it can work with
+    # anything that implements =~
+
     # lambda { "string".should.not =~ "strin" }.should fail
   end
 
