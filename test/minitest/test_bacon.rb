@@ -193,7 +193,7 @@ describe "Bacon" do
     # doesn't coerce strings to regexps so that it can work with
     # anything that implements =~
 
-    lambda { "string".should.not.match("strin") }.should fail
+    # lambda { "string".should.not.match("strin") }.should fail
 
     lambda { "string".should.not =~ /sling/ }.should succeed
     lambda { "string".should.not =~ /string/ }.should fail
