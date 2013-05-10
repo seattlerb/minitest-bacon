@@ -3,6 +3,7 @@ History.txt
 Manifest.txt
 README.txt
 Rakefile
-bin/minitest/bacon
 lib/minitest/bacon.rb
-test/test_minitest/bacon.rb
+test/minitest/test_bacon.rb
+test/minitest/test_nontrue.rb
+test/minitest/test_should.rb
