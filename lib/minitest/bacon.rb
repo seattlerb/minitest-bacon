@@ -5,11 +5,11 @@ require "minitest/autorun"
 
 module Minitest
   def self.poke
-    MiniTest::Spec.current._assertions += 1
+    MiniTest::Spec.current.assertions += 1
   end
 
   def self.count
-    MiniTest::Spec.current._assertions
+    MiniTest::Spec.current.assertions
   end
 end
 
