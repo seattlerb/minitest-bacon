@@ -65,7 +65,7 @@ should allow you to bridge 90+% of your bacon specs over to minitest.
 
 == REQUIREMENTS:
 
-* minitest
+* minitest, 5+
 
 == INSTALL:
 
