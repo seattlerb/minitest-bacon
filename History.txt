@@ -1,3 +1,9 @@
+=== 1.0.1 / 2013-05-29
+
+* 1 bug fix:
+
+  * Added explicit runtime dependency for minitest 5+ (was dev dependency).
+
 === 1.0.0 / 2013-05-10
 
 * 1 major enhancement

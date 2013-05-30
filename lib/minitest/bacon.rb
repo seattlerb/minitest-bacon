@@ -14,7 +14,7 @@ module Minitest
 end
 
 class Minitest::ValueMonad
-  VERSION = "1.0.0"
+  VERSION = "1.0.1"
 
   instance_methods.each { |name| undef_method name  if name =~ /\?|^\W+$/ }
 
