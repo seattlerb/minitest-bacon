@@ -30,6 +30,17 @@ end
 describe "Bacon" do
   include MetaTests
 
+  it "should have a good backtrace" do
+
+    e = begin
+          should.not.raise { raise "Error" }
+        rescue Exception => e
+          e
+        end
+
+    e.location.should.include? __FILE__
+  end
+
   it "should have should.satisfy" do
     lambda { should.satisfy { 1 == 1 } }.should succeed
     lambda { should.satisfy { 1 } }.should succeed

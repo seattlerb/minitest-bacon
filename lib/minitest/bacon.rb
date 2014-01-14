@@ -13,6 +13,21 @@ module Minitest
   end
 end
 
+class Minitest::Assertion
+  alias :oldloc :location
+
+  # override to add method_missing
+
+  def location # :nodoc:
+    last_before_assertion = ""
+    self.backtrace.reverse_each do |s|
+      break if s =~ /in .(method_missing|assert|refute|flunk|pass|fail|raise|must|wont)/
+      last_before_assertion = s
+    end
+    last_before_assertion.sub(/:in .*$/, "")
+  end
+end
+
 class Minitest::ValueMonad
   VERSION = "1.0.1"
 
