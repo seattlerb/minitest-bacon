@@ -1,3 +1,9 @@
+=== 1.0.2 / 2014-01-15
+
+* 1 bug fix:
+
+  * Fixed backtraces on failed expectations. (rf-)
+
 === 1.0.1 / 2013-05-29
 
 * 1 bug fix:
