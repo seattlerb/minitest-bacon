@@ -8,14 +8,14 @@ end
 module MetaTests
   def succeed
     lambda { |block|
-      block.should.not.raise MiniTest::Assertion
+      block.should.not.raise Minitest::Assertion
       true
     }
   end
 
   def fail
     lambda { |block|
-      block.should.raise MiniTest::Assertion
+      block.should.raise Minitest::Assertion
       true
     }
   end

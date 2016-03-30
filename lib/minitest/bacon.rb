@@ -5,11 +5,11 @@ require "minitest/autorun"
 
 module Minitest
   def self.poke
-    MiniTest::Spec.current.assertions += 1
+    Minitest::Spec.current.assertions += 1
   end
 
   def self.count
-    MiniTest::Spec.current.assertions
+    Minitest::Spec.current.assertions
   end
 end
 
@@ -70,7 +70,7 @@ class Minitest::ValueMonad
 
     Minitest.poke
     msg ||= "boom"
-    raise MiniTest::Assertion, msg if @pos ^ r
+    raise Minitest::Assertion, msg if @pos ^ r
 
     r
   end

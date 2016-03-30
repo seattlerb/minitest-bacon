@@ -12,7 +12,7 @@ describe "#should shortcut for #it" do
   end
 
   should "save characters even on failure" do
-    lambda { should.assert { 1 == 2 } }.should.raise MiniTest::Assertion
+    lambda { should.assert { 1 == 2 } }.should.raise Minitest::Assertion
   end
 
   should "work nested" do
