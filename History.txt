@@ -1,3 +1,9 @@
+=== 1.0.3 / 2016-05-16
+
+* 1 bug fix:
+
+  * Fixed several references to MT4.
+
 === 1.0.2 / 2014-01-15
 
 * 1 bug fix:
