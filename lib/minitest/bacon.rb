@@ -79,11 +79,12 @@ class Minitest::ValueMonad
     name = name.to_s.sub(/^be_/, '')
     name = "#{name}?" if name =~ /\w[^?]\z/
 
-    msg = @pos ? "" : "not"
+    msg = []
+    msg << "not" unless @pos
     msg << @val.inspect << ".#{name}"
     msg << "(#{args.map(&:inspect).join ", "}) failed"
 
-    assert(msg) { @val.__send__(name, *args, &block) }
+    assert(msg.join) { @val.__send__(name, *args, &block) }
   end
 
   def equal(value)         self == value      end
