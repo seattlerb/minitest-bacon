@@ -1,3 +1,9 @@
+=== 1.0.4 / 2024-07-12
+
+* 1 bug fix:
+
+  * Fixed usage of frozen string literals.
+
 === 1.0.3 / 2016-05-16
 
 * 1 bug fix:
@@ -21,4 +27,3 @@
 * 1 major enhancement
 
   * Birthday!
-
