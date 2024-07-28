@@ -218,10 +218,12 @@ describe "Bacon" do
 
   it "should have should.be.identical_to/same_as" do
     lambda { s = "string"; s.should.be.identical_to s }.should succeed
-    lambda { "string".should.be.identical_to "string" }.should fail
+
+    froze = "string".frozen?
+    lambda { "string".should.be.identical_to "string" }.should fail unless froze
 
     lambda { s = "string"; s.should.be.same_as s }.should succeed
-    lambda { "string".should.be.same_as "string" }.should fail
+    lambda { "string".should.be.same_as "string" }.should fail unless froze
   end
 
   it "should have should.respond_to" do
