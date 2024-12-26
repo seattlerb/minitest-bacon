@@ -21,7 +21,7 @@ class Minitest::Assertion
   def location # :nodoc:
     last_before_assertion = ""
     self.backtrace.reverse_each do |s|
-      break if s =~ /in .(method_missing|assert|refute|flunk|pass|fail|raise|must|wont)/
+      break if s.match?(/in [`'](?:[^']+[#.])?(?:method_missing|assert|refute|flunk|pass|fail|raise|must|wont)/) # :nodoc:
       last_before_assertion = s
     end
     last_before_assertion.sub(/:in .*$/, "")
