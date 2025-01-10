@@ -1,3 +1,9 @@
+=== 1.0.5 / 2025-01-10
+
+* 1 bug fix:
+
+  * Ruby 3.4: Fixed breakage from ruby 3.4 call stack changes.
+
 === 1.0.4 / 2024-07-12
 
 * 1 bug fix:
