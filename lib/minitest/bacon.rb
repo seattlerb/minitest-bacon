@@ -13,6 +13,20 @@ module Minitest
   end
 end
 
+if Minitest::VERSION > "6" then
+  warn "injecting minitest 6 hack"
+  class Minitest::Spec
+    def self.current # :nodoc:
+      Thread.current[:current_spec]
+    end
+
+    def initialize name # :nodoc:
+      super
+      Thread.current[:current_spec] = self
+    end
+  end
+end
+
 class Minitest::Assertion
   alias :oldloc :location
 
