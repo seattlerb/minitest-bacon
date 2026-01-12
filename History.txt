@@ -1,3 +1,9 @@
+=== 1.0.6 / 2026-01-12
+
+* 1 bug fix:
+
+  * Fixed incompatibility with minitest 6 (no more global expectations).
+
 === 1.0.5 / 2025-01-10
 
 * 1 bug fix:

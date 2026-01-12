@@ -43,7 +43,7 @@ class Minitest::Assertion
 end
 
 class Minitest::ValueMonad
-  VERSION = "1.0.5"
+  VERSION = "1.0.6"
 
   instance_methods.each { |name| undef_method name  if name =~ /\?|^\W+$/ }
 
